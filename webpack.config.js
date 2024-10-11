@@ -7,8 +7,8 @@ module.exports = {
     options: './src/options/index.js',
   },
   output: {
-    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
   },
   module: {
     rules: [
@@ -40,5 +40,6 @@ module.exports = {
       chunks: ['options'],
     }),
   ],
+  mode: 'production',   
 };
 

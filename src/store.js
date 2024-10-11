@@ -33,11 +33,14 @@ const messagesSlice = createSlice({
         message.read = true;
       }
     },
+    setNotificationSound(state, action) {
+      state.playSound = action.payload;
+    },
   },
 });
 
 // Export actions
-export const { messagesLoading, messagesReceived, messagesError, markAsRead } = messagesSlice.actions;
+export const { messagesLoading, messagesReceived, messagesError, markAsRead, setNotificationSound } = messagesSlice.actions;
 
 // Thunk for fetching messages
 export const fetchMessages = () => async (dispatch) => {
