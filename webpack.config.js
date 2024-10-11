@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -38,6 +39,11 @@ module.exports = {
       template: './src/options/index.html',
       filename: 'options.html',
       chunks: ['options'],
+    }),
+    new CopyWebpackPlugin({
+        patterns: [
+            { from: 'manifest.json', to: '' },
+        ]
     }),
   ],
   mode: 'production',   
